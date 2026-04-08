@@ -1,39 +1,26 @@
-import React, { useState } from "react";
+import { useState, useEffect } from 'react';
+import './Navbar.css';
 
 function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className="navbar">
-      <div className="container nav-inner">
-        {/* Text Logo */}
-        <div
-          className="text-logo"
-          onClick={() => {
-            document.getElementById("home")?.scrollIntoView({
-              behavior: "smooth",
-            });
-          }}
-        >
-          Big <span>Boss</span> Code
+    <nav className={`navbar ${scrolled ? 'scrolled glass-panel' : ''}`}>
+      <div className="nav-content">
+        <a href="#home" className="logo text-gradient">KA.</a>
+        <div className="nav-links">
+          <a href="#about" className="nav-link">About</a>
+          <a href="#projects" className="nav-link">Projects</a>
+          <a href="#contact" className="btn-primary contact-btn">Contact</a>
         </div>
-
-        {/* Navigation Links */}
-        <ul className={`nav-links ${open ? "open" : ""}`}>
-          <li><a href="#home" onClick={() => setOpen(false)}>Home</a></li>
-          <li><a href="#about" onClick={() => setOpen(false)}>About</a></li>
-          <li><a href="#projects" onClick={() => setOpen(false)}>Projects</a></li>
-          <li><a href="#contact" onClick={() => setOpen(false)}>Contact</a></li>
-        </ul>
-
-        {/* Hamburger */}
-        <button
-          className="hamburger"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          ☰
-        </button>
       </div>
     </nav>
   );
