@@ -5,13 +5,13 @@ const projectData = [
     title: 'Video Tool',
     description: 'A responsive video management interface built with modern web technologies, providing seamless user interaction and sleek aesthetics.',
     tech: ['React', 'Tailwind CSS', 'HTML'],
-    link: 'https://video-tool-5qkemah0f-khalid-s-projects-bf7ade2d.vercel.app/'
+    link: 'https://video-tool-one.vercel.app/'
   },
   {
     title: 'Khaf Consult',
     description: 'A professional consultancy website featuring clean design, smooth animations, and optimized performance for client acquisition.',
     tech: ['React', 'Tailwind CSS', 'HTML'],
-    link: 'https://khaf-consult-git-main-khalid-s-projects-bf7ade2d.vercel.app/'
+    link: 'https://khaf-consult.vercel.app/'
   },
   {
     title: 'Kanban App',
