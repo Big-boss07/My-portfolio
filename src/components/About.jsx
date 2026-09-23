@@ -1,5 +1,5 @@
 import './About.css';
-import avatarImg from '../assets/portfolio image.jpeg';
+import avatarImg from '../assets/portfolio-image.jpeg';
 
 function About({ id }) {
   return (
